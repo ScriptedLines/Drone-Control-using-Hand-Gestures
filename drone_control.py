@@ -163,8 +163,7 @@ class PX4Controller(Node):
         setpoint_msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
         self.trajectory_setpoint_publisher.publish(setpoint_msg)
 
-# API_TOKEN = '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'
-# API_URL = "https://api-inference.huggingface.co/models/uclanlp/visualbert-vqa-coco-pre"
+
 
 def image_qa(img):
     if not load_vqa_model():
@@ -248,7 +247,6 @@ cv.setMouseCallback('webcam', get_coordinates)
 check_hand_right=0
 check_hand_left=0
 
-# Initialize ROS 2 Node
 try:
     rclpy.init()
     px4_node = PX4Controller()
